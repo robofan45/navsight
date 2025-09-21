@@ -5,7 +5,7 @@ A comprehensive multi-sensor mobility aid system for Raspberry Pi 5, designed to
 ## Features
 
 ### Core Capabilities
-- **360° Obstacle Detection**: Multiple ultrasonic sensors provide near-field obstacle detection (0-2.5m range)
+- **Obstacle Detection**: Multiple ultrasonic sensors provide near-field obstacle detection (0-2.5m range)
 - **Computer Vision**: YOLO-based object detection and recognition using camera module
 - **GPS Navigation**: Waypoint-based navigation with turn-by-turn directions
 - **Audio Guidance**: Spoken directions using clock-face directional system (12 o'clock = straight ahead)
