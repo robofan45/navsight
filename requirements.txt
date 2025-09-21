@@ -1,0 +1,31 @@
+# Core dependencies for Mobility Aid System
+# Python 3.8+ required
+
+# Hardware interface
+RPi.GPIO>=0.7.0
+picamera2>=0.3.12
+
+# Computer vision and AI
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+numpy>=1.21.0
+Pillow>=9.0.0
+
+# Audio/TTS
+pyttsx3>=2.90
+
+# GPS and serial communication
+pyserial>=3.5
+pynmea2>=1.19.0
+
+# System utilities
+psutil>=5.9.0
+
+# Development and testing (optional)
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=22.0.0
+flake8>=5.0.0
+
+# Data processing
+scipy>=1.9.0

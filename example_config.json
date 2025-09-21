@@ -1,0 +1,47 @@
+{
+  "log_level": 20,
+  "log_file": "/var/log/mobility_aid/system.log",
+  "status_led_pin": 18,
+  "emergency_button_pin": 16,
+  "main_loop_interval": 0.1,
+  "immediate_danger_distance": 0.3,
+  "warning_distance": 1.0,
+  "caution_distance": 2.0,
+
+  "ultrasonic_config": {
+    "sensors": {
+      "front": {"trigger_pin": 23, "echo_pin": 24},
+      "front_left": {"trigger_pin": 25, "echo_pin": 8},
+      "front_right": {"trigger_pin": 7, "echo_pin": 1},
+      "left": {"trigger_pin": 12, "echo_pin": 16},
+      "right": {"trigger_pin": 20, "echo_pin": 21}
+    },
+    "max_distance": 2.5,
+    "min_distance": 0.02,
+    "measurement_timeout": 0.5,
+    "sample_rate": 10.0
+  },
+
+  "camera_config": {
+    "resolution": [640, 480],
+    "framerate": 30,
+    "model_path": "yolov8n.pt",
+    "confidence_threshold": 0.5,
+    "nms_threshold": 0.4,
+    "processing_interval": 0.2
+  },
+
+  "gps_config": {
+    "port": "/dev/ttyUSB0",
+    "baudrate": 9600,
+    "timeout": 1.0,
+    "update_interval": 1.0
+  },
+
+  "audio_config": {
+    "engine": "pyttsx3",
+    "voice_rate": 150,
+    "voice_volume": 0.9,
+    "priority_queue_size": 10
+  }
+}
