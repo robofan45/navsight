@@ -1,12 +1,12 @@
-# Mobility Aid System
+# NavSight Cane
 
-A comprehensive multi-sensor mobility aid system for Raspberry Pi 5, designed to assist users with navigation and obstacle avoidance using ultrasonic sensors, computer vision, GPS, and audio guidance.
+A smart mobility aid system for Raspberry Pi, designed to assist users with navigation and obstacle avoidance using a single ultrasonic sensor, camera module, GPS, and audio guidance.
 
 ## Features
 
 ### Core Capabilities
-- **Obstacle Detection**: Multiple ultrasonic sensors provide near-field obstacle detection (0-2.5m range)
-- **Computer Vision**: YOLO-based object detection and recognition using camera module
+- **Forward Obstacle Detection**: Single ultrasonic sensor provides forward obstacle detection (0-2.5m range)
+- **Computer Vision**: YOLO-based object detection and recognition using RPi camera module
 - **GPS Navigation**: Waypoint-based navigation with turn-by-turn directions
 - **Audio Guidance**: Spoken directions using clock-face directional system (12 o'clock = straight ahead)
 - **Sensor Fusion**: Intelligent decision-making combining all sensor inputs
@@ -22,25 +22,17 @@ A comprehensive multi-sensor mobility aid system for Raspberry Pi 5, designed to
 
 ## Hardware Requirements
 
-### Raspberry Pi 5 Setup
-- Raspberry Pi 5 (4GB+ RAM recommended)
+### Raspberry Pi Setup
+- Raspberry Pi 4 or 5 (4GB+ RAM recommended)
 - MicroSD card (32GB+ Class 10)
-- Camera Module 3 or compatible
+- RPi Camera Module (Camera Module 3 or compatible)
 - GPS module (USB or UART)
 - Speaker or headphones
-- 5V power supply (official Pi 5 power supply recommended)
+- 5V power supply (official Pi power supply recommended)
 
 ### Sensors
-- **Ultrasonic Sensors**: 5x HC-SR04 modules
+- **Ultrasonic Sensor**: 1x HC-SR04 module
   - Front: GPIO 23 (trigger), GPIO 24 (echo)
-  - Front-left: GPIO 25 (trigger), GPIO 8 (echo)
-  - Front-right: GPIO 7 (trigger), GPIO 1 (echo)
-  - Left: GPIO 12 (trigger), GPIO 16 (echo)
-  - Right: GPIO 20 (trigger), GPIO 21 (echo)
-
-### Status Indicators
-- Status LED: GPIO 18
-- Emergency button: GPIO 16 (with pull-up resistor)
 
 ### Optional Components
 - External GPS antenna for better reception
@@ -177,15 +169,13 @@ aid.start_navigation()
 ## Safety Features
 
 ### Emergency Procedures
-- **Emergency Button**: Physical button for immediate stop
-- **Voice Command**: "Emergency stop" command
+- **Voice Command**: "Emergency stop" command (future enhancement)
 - **Automatic Stop**: System stops on critical obstacles
 - **Fallback Modes**: Operates with reduced functionality if sensors fail
 
 ### System Monitoring
 - Continuous health checks of all subsystems
 - Audio alerts for system status changes
-- Visual status indicators via LED
 - Detailed logging for troubleshooting
 
 ## Troubleshooting
@@ -298,11 +288,11 @@ python mobility_aid.py --test
 
 ## Performance Optimization
 
-### Raspberry Pi 5 Optimizations
+### Raspberry Pi Optimizations
 - Use 64-bit OS for better performance
 - Enable GPU memory split: `gpu_mem=128`
 - Use fast microSD card (Application Class 2)
-- Consider USB 3.0 SSD for storage
+- Consider USB 3.0 SSD for storage (Pi 4/5)
 - Monitor CPU temperature and ensure cooling
 
 ### System Tuning
@@ -337,11 +327,11 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 ## Disclaimer
 
-This system is designed as an assistive technology aid. Users should:
+This NavSight cane system is designed as an assistive technology aid. Users should:
 - Always use proper mobility training and techniques
 - Not rely solely on this system for navigation
 - Maintain awareness of surroundings
 - Follow local accessibility guidelines
 - Test thoroughly in safe environments before daily use
 
-The system is not a replacement for professional mobility training or traditional mobility aids.
+The NavSight cane is not a replacement for professional mobility training or traditional mobility aids.
